@@ -89,21 +89,29 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, lang, setLang, 
         </nav>
       </div>
 
-      <div className="mt-auto p-8 border-t border-white/5">
-        <div className="mb-6 text-[10px] font-black text-white/20 uppercase tracking-[0.3em] text-center">Research Language</div>
-        <div className="flex items-center justify-between bg-white/5 p-1.5 rounded-2xl border border-white/5 shadow-inner">
-          <button 
-            onClick={() => setLang(Language.EN)}
-            className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all ${lang === Language.EN ? 'bg-indigo-600 text-white shadow-xl' : 'text-white/30 hover:text-white/50'}`}
-          >
-            EN
-          </button>
-          <button 
-            onClick={() => setLang(Language.AR)}
-            className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all ${lang === Language.AR ? 'bg-indigo-600 text-white shadow-xl' : 'text-white/30 hover:text-white/50'}`}
-          >
-            AR
-          </button>
+      <div className="mt-auto p-8 border-t border-white/5 space-y-6">
+        <div>
+          <div className="mb-4 text-[10px] font-black text-white/20 uppercase tracking-[0.3em] text-center">Research Language</div>
+          <div className="flex items-center justify-between bg-white/5 p-1.5 rounded-2xl border border-white/5 shadow-inner">
+            <button 
+              onClick={() => setLang(Language.EN)}
+              className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all ${lang === Language.EN ? 'bg-indigo-600 text-white shadow-xl' : 'text-white/30 hover:text-white/50'}`}
+            >
+              EN
+            </button>
+            <button 
+              onClick={() => setLang(Language.AR)}
+              className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all ${lang === Language.AR ? 'bg-indigo-600 text-white shadow-xl' : 'text-white/30 hover:text-white/50'}`}
+            >
+              AR
+            </button>
+          </div>
+        </div>
+        
+        <div className="text-[9px] font-medium text-white/20 text-center leading-relaxed italic border-t border-white/5 pt-4 px-2">
+          {lang === Language.EN 
+            ? "Technology developed and trained by Knowledge AI team as a Large Language Model using Deep Learning."
+            : "تقنية مطورة ومدربة من فريق Knowledge AI كنموذج لغوي ضخم بتقنية الDeep Learning"}
         </div>
       </div>
     </aside>
