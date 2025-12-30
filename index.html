@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge AI | Oussama SEBROU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <style>
+        :root {
+            --bg-deep: #060a14;
+            --accent-glow: rgba(79, 70, 229, 0.2);
+            --code-bg: #000000;
+        }
+        body {
+            background-color: var(--bg-deep);
+            color: #f8fafc;
+            font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif !important;
+            overflow-x: hidden;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            background: linear-gradient(
+                to bottom right,
+                #ffffff 20%,
+                #6366f1 50%,
+                #a5b4fc 80%
+            );
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 12s linear infinite, softFloat 6s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes softFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-8px);
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 30px var(--accent-glow);
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.2);
+            border-radius: 10px;
+        }
+        
+        .arabic-text {
+            font-family: 'Noto Sans Arabic', sans-serif !important;
+            line-height: 1.8;
+        }
+
+        .blue-glow {
+            box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-enter {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* KaTeX overrides for dark theme */
+        .katex {
+            font-size: 1.1em;
+            color: #a5b4fc;
+        }
+        .katex-display {
+            margin: 1.5em 0;
+            padding: 1.5em;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            position: relative;
+        }
+
+        /* Responsive and Bidirectional utility */
+        [dir="auto"] {
+            text-align: start;
+        }
+
+        /* Clean "Framecode" Style Code Blocks */
+        .code-sanctuary {
+            background-color: var(--code-bg);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            padding: 0;
+            margin: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .code-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .code-content {
+            padding: 16px;
+            overflow-x: auto;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        
+        /* Syntax Highlighting Colors - High Vibrancy */
+        .token-keyword { color: #f472b6; font-weight: bold; } /* Pink */
+        .token-string { color: #34d399; } /* Emerald */
+        .token-comment { color: #64748b; font-style: italic; }
+        .token-function { color: #60a5fa; } /* Blue */
+        .token-number { color: #fbbf24; } /* Amber */
+        .token-operator { color: #f87171; } /* Red */
+        .token-class { color: #a78bfa; } /* Purple */
+        .token-boolean { color: #22d3ee; } /* Cyan */
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
