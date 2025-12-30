@@ -1,5 +1,5 @@
 import React from 'react';
-import { ViewState, Language } from './types';
+import { ViewState, Language } from '../types';
 
 interface SidebarProps {
   currentView: ViewState;
